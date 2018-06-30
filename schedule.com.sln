@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "schedule.com", "schedule.com\schedule.com.csproj", "{67DE750C-5179-4787-8144-2805FB356B45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "schedule.data", "schedule.data\schedule.data.csproj", "{6E3A3C4C-9861-49ED-AB9D-50E7F64D41D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{67DE750C-5179-4787-8144-2805FB356B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67DE750C-5179-4787-8144-2805FB356B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67DE750C-5179-4787-8144-2805FB356B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E3A3C4C-9861-49ED-AB9D-50E7F64D41D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E3A3C4C-9861-49ED-AB9D-50E7F64D41D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E3A3C4C-9861-49ED-AB9D-50E7F64D41D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E3A3C4C-9861-49ED-AB9D-50E7F64D41D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

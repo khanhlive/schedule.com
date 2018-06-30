@@ -1,0 +1,52 @@
+﻿@using schedule.data.models
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<GiaoVien>
+@{
+    ViewBag.Title = "Danh sách giáo viên";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <h3 class="box-title m-b-0">Danh sách giáo viên</h3>
+            <table data-toggle="table" data-height="250" data-mobile-responsive="true" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Họ tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Giới tính</th>
+                        <th>Điện thoại</th>
+                        <th>Địa chỉ</th>
+                        <th>Tên đăng nhập</th>
+                        <th>Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (GiaoVien giaovien in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td>@giaovien.TenGV</td>
+                            <td>@giaovien.NamSinh</td>
+                            <td>@giaovien.GioiTinh</td>
+                            <td>@giaovien.SoDT</td>
+                            <td>@giaovien.DiaChi</td>
+                            <td>@giaovien.Username</td>
+                            <td></td>
+                        </tr>
+                        i++;
+                        
+                    }
+                </tbody>
+            </table>
+            @Html.PagedListPager(Model, page => Url.Action("Vanban", "document", new { area = "admin", page, pagesize = 20 }))
+        </div>
+    </div>
+
+</div>
+
+
