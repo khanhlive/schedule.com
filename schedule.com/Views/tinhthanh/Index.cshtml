@@ -1,0 +1,80 @@
+﻿@using schedule.data.erps.dictionary
+@using PagedList.Mvc
+@using PagedList
+@model IPagedList<DIC_TINH>
+@{
+    ViewBag.Title = "Danh mục tỉnh thành";
+    ViewBag.PageName = "DANH MỤC TỈNH THÀNH";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="box-title m-b-0">TỈNH THÀNH</h3>
+                    <p class="text-muted m-b-20">Danh mục tỉnh thành</p>
+                </div>
+                <div class="col-md-8 text-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary waves-effect"><i class="fa fa-plus m-r-5"></i><span>Tạo mới</span></button>
+                        <button type="button" class="btn btn-default waves-effect"><i class="fa fa-refresh m-r-5"></i><span>Làm mới</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scrollable">
+                <div class="table-responsive">
+                    <table id="" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th width="60">#</th>
+                                <th>Mã</th>
+                                <th>Tên tỉnh/thành</th>
+                                <th>Cấp</th>
+                                <th width="150">Trạng thái</th>
+                                <th width="100">Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (DIC_TINH tinhthanh in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@tinhthanh.MaTinh</td>
+                                    <td>@tinhthanh.TenTinh</td>
+                                    <td>@tinhthanh.Cap</td>
+                                    <td>
+                                        @if (tinhthanh.Status == 1)
+                                        {
+                                            <span class="label label-success">Đang sử dụng</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="label label-default">
+                                                Không sử dụng
+                                            </span>
+                                        }
+                                    </td>
+                                    <td class="text-nowrap">
+                                        <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                        <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-7 text-right">
+                        @Html.PagedListPager(Model, page => Url.Action("Index", "dantoc", new { page, pagesize = (int)ViewBag.pagesize }), schedule.data.helpers.HtmlHelper.GetPagedListRenderOptions)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

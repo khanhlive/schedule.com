@@ -6,3 +6,28 @@
     top:0px;
     left:0px;
 }
+body{
+    font-size:13px;
+}
+.btn{
+    border-radius:1px;
+}
+.well{
+    padding:15px;
+    margin-bottom:15px;
+}
+.navbar-top-links > li > .name-organization {
+    color: #ffffff;
+    padding: 0 14px;
+    line-height: 45px;
+    min-height: 45px;
+    position:relative;
+    display:block;
+    font-weight:bold;
+}
+.cd-dropdown span.fa text.area-name {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.pagination {
+    margin:0px;
+}

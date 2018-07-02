@@ -33,9 +33,25 @@
     <Reference Include="Dapper, Version=1.50.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.0\lib\net45\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper.Contrib, Version=1.50.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.1.50.0\lib\net45\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.4.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.4.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,12 +60,74 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="CommonVariable.cs" />
+    <Compile Include="enums\DictionaryModuleType.cs" />
+    <Compile Include="enums\LoaiPhongBan.cs" />
+    <Compile Include="enums\SqlReturnValue.cs" />
+    <Compile Include="enums\StringDatetimeType.cs" />
+    <Compile Include="erps\dictionary\DIC_BENHVIEN.cs" />
+    <Compile Include="erps\dictionary\DIC_CANBO.cs" />
+    <Compile Include="erps\dictionary\DIC_CHUCVU.cs" />
+    <Compile Include="erps\dictionary\DIC_CHUYENKHOA.cs" />
+    <Compile Include="erps\dictionary\DIC_DANTOC.cs" />
+    <Compile Include="erps\dictionary\DIC_DICHVU.cs" />
+    <Compile Include="erps\dictionary\DIC_DOITUONG.cs" />
+    <Compile Include="erps\dictionary\DIC_DTBN.cs" />
+    <Compile Include="erps\dictionary\DIC_DUONGDUNG.cs" />
+    <Compile Include="erps\dictionary\DIC_HUYEN.cs" />
+    <Compile Include="erps\dictionary\DIC_ICD10.cs" />
+    <Compile Include="erps\dictionary\DIC_NGHENGHIEP.cs" />
+    <Compile Include="erps\dictionary\DIC_NHACUNGCAP.cs" />
+    <Compile Include="erps\dictionary\DIC_NHOMDICHVU.cs" />
+    <Compile Include="erps\dictionary\DIC_PHANLOAIPHONGBAN.cs" />
+    <Compile Include="erps\dictionary\DIC_PHONGBAN.cs" />
+    <Compile Include="erps\dictionary\DIC_TIEUNHOMDICHVU.cs" />
+    <Compile Include="erps\dictionary\DIC_TINH.cs" />
+    <Compile Include="erps\dictionary\DIC_XAPHUONG.cs" />
+    <Compile Include="erps\EntityBase.cs" />
+    <Compile Include="erps\systems\SYS_GROUPSYSTEM.cs" />
+    <Compile Include="erps\systems\SYS_ROLE.cs" />
+    <Compile Include="erps\systems\SYS_ROLE_PERMISSION_MAPING.cs" />
+    <Compile Include="erps\systems\SYS_SUBSYSTEM.cs" />
+    <Compile Include="erps\systems\SYS_USER.cs" />
+    <Compile Include="erps\vss\DIC_GIOITINH.cs" />
+    <Compile Include="erps\vss\VSS_BENHNHAN.cs" />
+    <Compile Include="erps\vss\VSS_CANLAMSANG.cs" />
+    <Compile Include="erps\vss\VSS_CANLAMSANG_CHITIET.cs" />
+    <Compile Include="erps\vss\VSS_CHIDINH.cs" />
+    <Compile Include="erps\vss\VSS_DICHVUCHITIET.cs" />
+    <Compile Include="erps\vss\VSS_DONTHUOC.cs" />
+    <Compile Include="erps\vss\VSS_DONTHUOCHITIET.cs" />
+    <Compile Include="erps\vss\VSS_NHAPDUOCCHITIET.cs" />
+    <Compile Include="erps\vss\VSS_NHAPUOC.cs" />
+    <Compile Include="erps\vss\VSS_PERSON.cs" />
+    <Compile Include="erps\vss\VSS_THONGTINBOSUNG.cs" />
+    <Compile Include="extensions\AttributeCustom.cs" />
+    <Compile Include="extensions\objs\ChuyenKhoaClass.cs" />
+    <Compile Include="extensions\objs\KhoaPhongPL.cs" />
+    <Compile Include="extensions\objs\KieuDonBN.cs" />
+    <Compile Include="extensions\objs\NhomDV_QD.cs" />
+    <Compile Include="extensions\objs\PhanLoaiXuat.cs" />
+    <Compile Include="extensions\objs\PhimXQuang.cs" />
+    <Compile Include="extensions\objs\TaiNan.cs" />
+    <Compile Include="extensions\objs\TieuNhomRG_ChuyenKhoa.cs" />
+    <Compile Include="extensions\DataConverter.cs" />
+    <Compile Include="extensions\FormatHelper.cs" />
+    <Compile Include="helpers\HtmlHelper.cs" />
+    <Compile Include="helpers\MyConfig.cs" />
+    <Compile Include="helpers\SqlAccess.cs" />
+    <Compile Include="helpers\SqlHelper.cs" />
+    <Compile Include="helpers\SqlHelperException.cs" />
     <Compile Include="models\EntityBase.cs" />
     <Compile Include="models\GiaoVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

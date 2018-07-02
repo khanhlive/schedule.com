@@ -314,7 +314,7 @@ hr {
   vertical-align: middle;
 }
 .mdi {
-  font-size: 17px;
+  font-size: 16px;
 }
 .bx-shadow {
   -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
@@ -857,7 +857,7 @@ pre {
 }
     .bg-title h4 {
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 500;
         margin-top: 6px;
         margin-bottom: 6px;
@@ -1517,7 +1517,7 @@ table.dataTable thead .sorting:after {
   border-radius: 0px;
   font-weight: 500;
   font-size: 16px;
-  padding: 20px 25px;
+  padding: 10px 15px;
 }
 .panel .panel-heading .panel-title {
   font-size: 16px;
@@ -1537,13 +1537,13 @@ table.dataTable thead .sorting:after {
   opacity: 1;
 }
 .panel .panel-body {
-  padding: 25px;
+  padding: 15px;
 }
 .panel .panel-body:first-child h3 {
   margin-top: 0px;
   font-weight: 500;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 .panel .panel-footer {
@@ -2528,7 +2528,7 @@ ul.common li a:hover {
   width: 40px;
   padding-top: 12px;
   height: 40px;
-  font-size: 14px!important;
+  font-size: 13px!important;
 }
 .circle-md {
   width: 60px;
@@ -2721,7 +2721,7 @@ ul.common li a:hover {
   white-space: nowrap;
 }
 .comment-center .mail-contnet .mail-desc {
-  font-size: 14px;
+  font-size: 13px;
   display: block;
   margin: 15px 0;
   line-height: 25px;
@@ -2977,13 +2977,13 @@ ul.common li a:hover {
   border-radius: 0px 8px 8px 8px;
   display: inline-block;
   padding: 15px;
-  font-size: 14px;
+  font-size: 13px;
   position: relative;
 }
 .chat-list .chat-text h4 {
   color: #1a2942;
   display: block;
-  font-size: 14px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
   margin: 0;
@@ -3068,7 +3068,7 @@ ul.common li a:hover {
 .demo-placeholder {
   width: 100%;
   height: 100%;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.2em;
 }
 /*Notification alert*/
@@ -3086,7 +3086,7 @@ ul.common li a:hover {
 }
 .myadmin-alert h4 {
   color: inherit;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   line-height: normal;
   margin: 0;
@@ -3338,7 +3338,7 @@ ul.common li a:hover {
   display: block;
   float: right;
   font-family: 'themify';
-  font-size: 14px;
+  font-size: 13px;
   text-align: right;
   width: 25px;
 }
@@ -3350,7 +3350,7 @@ ul.common li a:hover {
   display: block;
   float: right;
   font-family: 'themify';
-  font-size: 14px;
+  font-size: 13px;
   text-align: right;
   width: 25px;
 }
@@ -3706,7 +3706,7 @@ ul.common li a:hover {
 .table > tfoot > tr > td,
 .table > thead > tr > th,
 .table-bordered {
-  border-top: 1px solid #e4e7ea;
+  border-top: 1px solid #dedede;
 }
 .table > tbody > tr > td,
 .table > tbody > tr > th,
@@ -3722,18 +3722,18 @@ ul.common li a:hover {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #e4e7ea;
+  border: 1px solid #dedede;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #e4e7ea;
+  border-bottom: 2px solid #dedede;
   font-weight:bold;
 }
 tbody {
-  color: #797979;
+  color: #565656;
 }
 th {
-  color: #666666;
+  color: #333;
   font-weight: 500;
 }
 .table-bordered {
@@ -3751,7 +3751,7 @@ table.focus-on tbody tr.focused td {
   border: none !important;
 }
 .table-rep-plugin tbody th {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: normal;
 }
 .jsgrid .jsgrid-table {
@@ -4220,7 +4220,7 @@ table.focus-on tbody tr.focused td {
 }
 .fc th.fc-widget-header {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   padding: 7px 0px;
   text-transform: uppercase;
@@ -14294,7 +14294,7 @@ ul.select-row-icon li a.selected i.whn-hov {
 .sttabs nav a span {
   vertical-align: middle;
   font-wight: 500;
-  font-size: 14px;
+  font-size: 13px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 .sttabs nav a:focus {
@@ -14323,7 +14323,7 @@ ul.select-row-icon li a.selected i.whn-hov {
 .tabs-style-bar nav ul li a span {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 13px;
   font-family: 'Poppins', sans-serif;
 }
 .tabs-style-bar nav ul li.tab-current a {
@@ -14430,7 +14430,7 @@ ul.select-row-icon li a.selected i.whn-hov {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 13px;
   padding: 15px 0;
   color: #313131;
 }
@@ -15033,7 +15033,7 @@ ul.select-row-icon li a.selected i.whn-hov {
   margin: 0 0 20px -180px;
   bottom: 100%;
   text-align: left;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 30px;
   box-shadow: -5px -5px 15px rgba(48, 54, 61, 0.2);
   background: #2b2b2b;
@@ -15116,7 +15116,7 @@ ul.select-row-icon li a.selected i.whn-hov {
   margin-right: 1em;
 }
 .tooltip-text {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 24px;
   display: block;
   padding: 1.31em 1.21em 1.21em 0;
@@ -15303,7 +15303,7 @@ a.mytooltip {
   text-align: left;
   background: #03a9f3;
   opacity: 0;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 27px;
   padding: 1.5em;
   color: #ffffff;
@@ -16010,7 +16010,7 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
   border-bottom: 1px solid #e4e7ea;
 }
 .floating-labels select.form-control > option {
-  font-size: 14px;
+  font-size: 13px;
 }
 .has-error .form-control {
   border-bottom: 1px solid #ff7676;
