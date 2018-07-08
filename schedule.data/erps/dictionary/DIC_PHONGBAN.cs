@@ -67,7 +67,7 @@ namespace schedule.data.erps.dictionary
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override DIC_PHONGBAN Get(object key)
         {
             throw new NotImplementedException();
         }

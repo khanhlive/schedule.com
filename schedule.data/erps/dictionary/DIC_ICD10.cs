@@ -79,7 +79,7 @@ namespace schedule.data.erps.dictionary
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override DIC_ICD10 Get(object key)
         {
             throw new NotImplementedException();
         }

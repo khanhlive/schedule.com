@@ -7,7 +7,7 @@ using schedule.data.helpers;
 
 namespace schedule.data.erps.systems
 {
-    public class SYS_SUBSYSTEM : EntityBase<SYS_USER>
+    public class SYS_SUBSYSTEM : EntityBase<SYS_SUBSYSTEM>
     {
         #region Properties
 
@@ -32,7 +32,7 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Delete(SYS_USER entity)
+        public override SqlResultType Delete(SYS_SUBSYSTEM entity)
         {
             throw new NotImplementedException();
         }
@@ -42,7 +42,7 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override SYS_SUBSYSTEM Get(object key)
         {
             throw new NotImplementedException();
         }
@@ -52,7 +52,7 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Insert(SYS_USER entity)
+        public override SqlResultType Insert(SYS_SUBSYSTEM entity)
         {
             throw new NotImplementedException();
         }
@@ -62,14 +62,60 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Update(SYS_USER entity)
+        public override SqlResultType Update(SYS_SUBSYSTEM entity)
         {
             throw new NotImplementedException();
         }
 
-        protected override IEnumerable<SYS_USER> DataReaderToList(SqlDataReader dataReader)
+        public IEnumerable<SYS_SUBSYSTEM> GetSubSystemBySystemId(string systemId)
         {
-            throw new NotImplementedException();
+            string query = string.Format(@"SELECT ss.SubSystemID,ss.SubSystemCode,ss.SubSystemName,ss.[Description],ss.ParentID,ss.SortOrder,ss.SystemType,ss.EditVersion,ss.GroupSystem_ID FROM SYS_SUBSYSTEM AS ss WHERE ss.GroupSystem_ID = @SystemId ORDER BY ss.GroupSystem_ID,ss.ParentID,ss.SortOrder");
+            if (!string.IsNullOrEmpty(query) && !string.IsNullOrWhiteSpace(query))
+            {
+                this.CreateConnection();
+                try
+                {
+                    this.sqlHelper.CommandType = CommandType.Text;
+                    SqlDataReader dt = this.sqlHelper.ExecuteReader(query, new string[] { "@SystemId" }, new object[] { systemId });
+                    return this.DataReaderToList(dt);
+                }
+                catch (Exception e)
+                {
+                    this.sqlHelper.Close();
+                    log.Error("GetSubSystemBySystemId", e);
+                    return null;
+                }
+            }
+            else return null;
+        }
+
+        protected override IEnumerable<SYS_SUBSYSTEM> DataReaderToList(SqlDataReader dataReader)
+        {
+            try
+            {
+                List<SYS_SUBSYSTEM> sys_subsystems = new List<SYS_SUBSYSTEM>();
+                while (dataReader.Read())
+                {
+                    SYS_SUBSYSTEM sys_groupsystem = new SYS_SUBSYSTEM();
+                    sys_groupsystem.SubSystemID = DataConverter.StringToInt(dataReader["SubSystemID"].ToString());
+                    sys_groupsystem.SubSystemCode = dataReader["SubSystemCode"].ToString();
+                    sys_groupsystem.SubSystemName = dataReader["SubSystemName"].ToString();
+                    sys_groupsystem.Description = dataReader["Description"].ToString();
+                    //sys_groupsystem.Image = dataReader["Image"].ToString();
+                    sys_groupsystem.SortOrder = DataConverter.StringToInt(dataReader["SortOrder"].ToString());
+                    sys_groupsystem.SystemType = DataConverter.StringToInt(dataReader["SystemType"].ToString());
+                    sys_groupsystem.EditVersion = DataConverter.StringToInt(dataReader["EditVersion"].ToString());
+                    sys_groupsystem.GroupSystem_ID = DataConverter.StringToInt(dataReader["GroupSystem_ID"].ToString());
+                    sys_groupsystem.ParentID = dataReader["ParentID"].ToString();
+                    sys_subsystems.Add(sys_groupsystem);
+                }
+                return sys_subsystems;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Generate SYS_SUBSYSTEM", ex);
+                return null;
+            }
         }
 
         #endregion

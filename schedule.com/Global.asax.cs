@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using schedule.com.Models.sessions;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -16,6 +17,9 @@ namespace schedule.com
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             data.helpers.SqlHelper.ConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["HospitalAdo"].ConnectionString;
+            SessionProvider sessionProvider = new SessionProvider();
+            sessionProvider.ModuleId = "9";
+            sessionProvider.ModuleCode = "GSQLHT";
         }
     }
 }

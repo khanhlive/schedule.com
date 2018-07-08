@@ -49,7 +49,7 @@
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override DIC_CHUYENKHOA Get(object key)
         {
             throw new NotImplementedException();
         }

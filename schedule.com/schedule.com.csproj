@@ -176,6 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\sessions\SessionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +185,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom\style4.css" />
+    <Content Include="Content\images\HeadBar.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1933,6 +1935,49 @@
     <Content Include="Plugins\images\users\sonu.jpg" />
     <Content Include="Plugins\images\users\varun.jpg" />
     <Content Include="Plugins\images\weather-bg.jpg" />
+    <Content Include="Plugins\input-mask\inputmask\bindings\inputmask.binding.js" />
+    <Content Include="Plugins\input-mask\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.js" />
+    <Content Include="Plugins\input-mask\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.js" />
+    <Content Include="Plugins\input-mask\inputmask\dependencyLibs\inputmask.dependencyLib.js" />
+    <Content Include="Plugins\input-mask\inputmask\global\document.js" />
+    <Content Include="Plugins\input-mask\inputmask\global\window.js" />
+    <Content Include="Plugins\input-mask\inputmask\inputmask.date.extensions.js" />
+    <Content Include="Plugins\input-mask\inputmask\inputmask.extensions.js" />
+    <Content Include="Plugins\input-mask\inputmask\inputmask.js" />
+    <Content Include="Plugins\input-mask\inputmask\inputmask.numeric.extensions.js" />
+    <Content Include="Plugins\input-mask\inputmask\inputmask.phone.extensions.js" />
+    <Content Include="Plugins\input-mask\inputmask\jquery.inputmask.js" />
+    <Content Include="Plugins\input-mask\inputmask\phone-codes\phone-be.js" />
+    <Content Include="Plugins\input-mask\inputmask\phone-codes\phone-ca.js" />
+    <Content Include="Plugins\input-mask\inputmask\phone-codes\phone-hu.js" />
+    <Content Include="Plugins\input-mask\inputmask\phone-codes\phone-it.js" />
+    <Content Include="Plugins\input-mask\inputmask\phone-codes\phone-mx.js" />
+    <Content Include="Plugins\input-mask\inputmask\phone-codes\phone-nl.js" />
+    <Content Include="Plugins\input-mask\inputmask\phone-codes\phone-ru.js" />
+    <Content Include="Plugins\input-mask\inputmask\phone-codes\phone.js" />
+    <Content Include="Plugins\input-mask\jquery.inputmask.bundle.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\bindings\inputmask.binding.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\dependencyLibs\inputmask.dependencyLib.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\global\document.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\global\window.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\inputmask.date.extensions.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\inputmask.extensions.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\inputmask.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\inputmask.numeric.extensions.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\inputmask.phone.extensions.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\jquery.inputmask.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone-be.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone-ca.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone-hu.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone-it.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone-mx.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone-nl.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone-ru.min.js" />
+    <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone.min.js" />
+    <Content Include="Plugins\input-mask\min\jquery.inputmask.bundle.min.js" />
+    <Content Include="Scripts\apps\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\jquery.dropdown.js" />
@@ -3007,10 +3052,13 @@
     <Content Include="Views\dantoc\Index.cshtml" />
     <Content Include="Views\tinhthanh\Index.cshtml" />
     <Content Include="Views\tinhthanh\Create.cshtml" />
+    <Content Include="Views\tinhthanh\Edit.cshtml" />
+    <Content Include="Views\tinhthanh\demo.cshtml" />
+    <Content Include="Views\Shared\_LayoutTemplate.cshtml" />
+    <Content Include="Views\Shared\_LeftSidebarTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Plugins\bower_components\flot\examples\annotating\" />
     <Folder Include="Plugins\bower_components\flot\examples\axes-interacting\" />
     <Folder Include="Plugins\bower_components\flot\examples\axes-multiple\" />

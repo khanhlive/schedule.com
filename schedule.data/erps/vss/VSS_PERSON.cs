@@ -102,7 +102,7 @@ FROM
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override VSS_PERSON Get(object key)
         {
             throw new NotImplementedException();
         }

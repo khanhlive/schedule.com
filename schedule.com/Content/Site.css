@@ -1,33 +1,87 @@
-﻿.navbar{
-    min-height:45px;
+﻿.navbar {
+    min-height: 45px;
 }
-.nav .right-side-toggle i{
-    position:relative;
-    top:0px;
-    left:0px;
+
+.nav .right-side-toggle i {
+    position: relative;
+    top: 0px;
+    left: 0px;
 }
-body{
-    font-size:13px;
+
+body {
+    font-size: 13px;
 }
-.btn{
-    border-radius:1px;
+
+.btn {
+    border-radius: 1px;
+    font-size: 13px;
 }
-.well{
-    padding:15px;
-    margin-bottom:15px;
+
+.well {
+    padding: 15px;
+    margin-bottom: 15px;
 }
+
 .navbar-top-links > li > .name-organization {
     color: #ffffff;
     padding: 0 14px;
     line-height: 45px;
     min-height: 45px;
-    position:relative;
-    display:block;
-    font-weight:bold;
+    position: relative;
+    display: block;
+    font-weight: bold;
 }
+
 .cd-dropdown span.fa text.area-name {
     font-family: 'Source Sans Pro', sans-serif;
 }
+
 .pagination {
-    margin:0px;
+    margin: 0px;
 }
+
+.form-control {
+    font-size: 13px;
+}
+
+form.action {
+    display: inline-block;
+}
+
+.toolbar {
+    width: 100%;
+    padding-top: 2px;
+    height: 36px;
+    padding-left:10px;
+    background-color: #F8F8F8;
+    border: 1px solid #FFFFFF;
+    outline: 1px solid #E4E4E4 !important;
+}
+
+    .toolbar::after {
+        display: inline-block;
+        height: 15px;
+        position: absolute;
+        content: "";
+        width: 3px;
+        margin-right: 3px;
+        margin-left: 6px;
+        background-image: url(images/HeadBar.jpg);
+        top: 10px;
+        left: 15px;
+    }
+
+    .toolbar .form-control {
+        height: 29px;
+        padding: 0 10px;
+    }
+
+    .toolbar .control-label {
+        margin-left: 10px;
+    }
+
+    .toolbar .btn {
+        margin-left: 20px;
+        height: 30px;
+        padding: 4px 12px;
+    }

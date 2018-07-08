@@ -3,7 +3,7 @@ using schedule.com.Controllers.Base;
 using schedule.data.erps.dictionary;
 using System.Web.Mvc;
 
-namespace schedule.com.Controllers.Dictionary
+namespace schedule.com.Controllers
 {
     public class dantocController : BaseController
     {

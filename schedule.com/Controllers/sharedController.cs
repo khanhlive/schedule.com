@@ -18,5 +18,9 @@ namespace schedule.com.Controllers
                 return PartialView("~/Views/Shared/_NavbarHeader.cshtml");
             }
         }
+        public PartialViewResult _LeftSidebar()
+        {
+            return PartialView("~/Views/Shared/_LeftSidebar.cshtml");
+        }
     }
 }

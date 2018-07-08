@@ -1,4 +1,5 @@
 ﻿using PagedList.Mvc;
+using schedule.data.enums;
 using System.Collections.Generic;
 
 namespace schedule.data.helpers
@@ -12,6 +13,18 @@ namespace schedule.data.helpers
             DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
             DisplayLinkToNextPage = PagedListDisplayMode.Always,
             DisplayLinkToLastPage = PagedListDisplayMode.Always, LiElementClasses=new List<string> { "footable-page" },
+            LinkToPreviousPageFormat= "‹",
+            LinkToFirstPageFormat= "«",
+            LinkToNextPageFormat= "›",
+            LinkToLastPageFormat= "»"
         };
+    }
+    
+
+    public class MessageObject
+    {
+        public MessageObjectType type { get; set; }
+        public string title { get; set; }
+        public string message { get; set; }
     }
 }

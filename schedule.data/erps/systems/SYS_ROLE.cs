@@ -38,7 +38,7 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override SYS_ROLE Get(object key)
         {
             throw new NotImplementedException();
         }

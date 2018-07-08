@@ -80,7 +80,7 @@ namespace schedule.data.erps
         public abstract SqlResultType Delete();
         public abstract SqlResultType Delete(T entity);
         public abstract SqlResultType Exsist(object key);
-        public abstract SqlResultType Get(object key);
+        public abstract T Get(object key);
         
         protected abstract IEnumerable<T> DataReaderToList(SqlDataReader dataReader);
         

@@ -10,7 +10,14 @@
         NotExisted = -2,
         OK = 1,
         Failed = 0,
-        Exception,
-        None
+        Exception=2,
+        None=3
+    }
+    public enum MessageObjectType
+    {
+        Info,
+        Warning,
+        Success,
+        Error
     }
 }

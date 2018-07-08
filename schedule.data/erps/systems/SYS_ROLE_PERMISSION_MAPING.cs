@@ -7,7 +7,7 @@ using schedule.data.helpers;
 
 namespace schedule.data.erps.systems
 {
-    public class SYS_ROLE_PERMISSION_MAPING : EntityBase<SYS_USER>
+    public class SYS_ROLE_PERMISSION_MAPING : EntityBase<SYS_ROLE_PERMISSION_MAPING>
     {
         #region Properties
 
@@ -38,7 +38,7 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Delete(SYS_USER entity)
+        public override SqlResultType Delete(SYS_ROLE_PERMISSION_MAPING entity)
         {
             throw new NotImplementedException();
         }
@@ -48,7 +48,7 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override SYS_ROLE_PERMISSION_MAPING Get(object key)
         {
             throw new NotImplementedException();
         }
@@ -58,7 +58,7 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Insert(SYS_USER entity)
+        public override SqlResultType Insert(SYS_ROLE_PERMISSION_MAPING entity)
         {
             throw new NotImplementedException();
         }
@@ -68,12 +68,12 @@ namespace schedule.data.erps.systems
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Update(SYS_USER entity)
+        public override SqlResultType Update(SYS_ROLE_PERMISSION_MAPING entity)
         {
             throw new NotImplementedException();
         }
 
-        protected override IEnumerable<SYS_USER> DataReaderToList(SqlDataReader dataReader)
+        protected override IEnumerable<SYS_ROLE_PERMISSION_MAPING> DataReaderToList(SqlDataReader dataReader)
         {
             throw new NotImplementedException();
         }

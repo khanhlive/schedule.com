@@ -58,7 +58,7 @@ namespace schedule.data.erps.vss
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override DIC_GIOITINH Get(object key)
         {
             throw new NotImplementedException();
         }

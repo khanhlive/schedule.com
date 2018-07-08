@@ -51,7 +51,7 @@ namespace schedule.data.erps.dictionary
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override DIC_DTBN Get(object key)
         {
             throw new NotImplementedException();
         }

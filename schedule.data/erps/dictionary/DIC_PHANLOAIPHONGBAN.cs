@@ -33,7 +33,7 @@
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override DIC_PHANLOAIPHONGBAN Get(object key)
         {
             throw new NotImplementedException();
         }

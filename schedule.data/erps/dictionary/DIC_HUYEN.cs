@@ -65,7 +65,7 @@ namespace schedule.data.erps.dictionary
             throw new System.NotImplementedException();
         }
 
-        public override SqlResultType Get(object key)
+        public override DIC_HUYEN Get(object key)
         {
             throw new System.NotImplementedException();
         }
