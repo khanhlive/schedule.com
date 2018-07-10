@@ -17,9 +17,6 @@ namespace schedule.com
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             data.helpers.SqlHelper.ConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["HospitalAdo"].ConnectionString;
-            SessionProvider sessionProvider = new SessionProvider();
-            sessionProvider.ModuleId = "9";
-            sessionProvider.ModuleCode = "GSQLHT";
         }
     }
 }

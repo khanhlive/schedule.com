@@ -1,4 +1,5 @@
-﻿using System;
+﻿using schedule.com.Controllers.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Mvc;
 
 namespace schedule.com.Controllers
 {
-    public class templateController : Controller
+    public class templateController : BaseController
     {
         // GET: template
         public ActionResult Index()

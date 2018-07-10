@@ -1,5 +1,7 @@
 ﻿using schedule.com.Models.sessions;
+using schedule.data.businessObject;
 using schedule.data.enums;
+using schedule.data.erps.systems;
 using schedule.data.helpers;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,37 @@ namespace schedule.com.Controllers.Base
         public BaseController()
         {
             this.sessionProvider = new SessionProvider();
+            sessionProvider.ModuleId = "9";
+            sessionProvider.ModuleCode = "GSQLHT";
+            LoadMainMenu();
+        }
+
+        protected virtual void LoadMainMenu()
+        {
+            using (data.erps.systems.SYS_GROUPSYSTEM sys_groupsystem = new data.erps.systems.SYS_GROUPSYSTEM())
+            {
+                var groupModules = sys_groupsystem.GetAll();
+                ViewData["groupModules"] = groupModules;
+            }
+            MenuProvider menuProvider = new MenuProvider();
+            
+            List<SYS_SUBSYSTEM> da = new List<SYS_SUBSYSTEM>();
+            for (int i = 0; i < 10000; i++)
+            {
+                SYS_SUBSYSTEM d = new SYS_SUBSYSTEM { SubSystemID = i };
+                Random random = new Random();
+                if (i < 50) d.ParentID = null;
+                else d.ParentID = random.Next(0, 50).ToString();
+                da.Add(d);
+            }
+            //theo foreach
+            DateTime date1 = DateTime.Now;
+            IEnumerable<data.erpExtensions.SYS_SUBSYSTEM_EXTEND> menus= menuProvider.GetMainMenu(da);
+            var count = DateTime.Now - date1;
+            //theo chấm
+            DateTime date2 = DateTime.Now;
+            IEnumerable<data.erpExtensions.SYS_SUBSYSTEM_EXTEND> menus2 = menuProvider.GetMainMenu2(da);
+            var count2 = DateTime.Now - date2;
         }
 
         protected void SetPage(int page)

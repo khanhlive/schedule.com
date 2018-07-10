@@ -5,10 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using schedule.com.Controllers.Base;
 
 namespace schedule.com.Controllers
 {
-    public class thoikhoabieuController : Controller
+    public class thoikhoabieuController : BaseController
     {
         // GET: thoikhoabieu
         public ActionResult Index()

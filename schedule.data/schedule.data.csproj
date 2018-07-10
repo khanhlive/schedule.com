@@ -86,6 +86,7 @@
     <Compile Include="businessObject\MenuProvider.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CommonVariable.cs" />
+    <Compile Include="designPatterns\adapters\SysSubSystemToSysSubSystemExtendAdapter.cs" />
     <Compile Include="enums\DictionaryModuleType.cs" />
     <Compile Include="enums\LoaiPhongBan.cs" />
     <Compile Include="enums\SqlReturnValue.cs" />

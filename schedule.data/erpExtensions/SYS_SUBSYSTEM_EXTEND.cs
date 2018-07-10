@@ -9,6 +9,6 @@ namespace schedule.data.erpExtensions
         {
             this.Sys_SubSystems = new List<SYS_SUBSYSTEM>();
         }
-        public IEnumerable<SYS_SUBSYSTEM> Sys_SubSystems;
+        public List<SYS_SUBSYSTEM> Sys_SubSystems;
     }
 }
