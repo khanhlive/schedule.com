@@ -21,7 +21,8 @@ namespace schedule.com.Models.sessions
         {
             get
             {
-                return this.GetSessionValue(_moduleId).ToString();
+                object obj = this.GetSessionValue(_moduleId);
+                return obj == null ? null : obj.ToString();
             }
             set
             {
@@ -33,7 +34,8 @@ namespace schedule.com.Models.sessions
         {
             get
             {
-                return this.GetSessionValue(_moduleCode).ToString();
+                object obj = this.GetSessionValue(_moduleCode);
+                return obj == null ? null : obj.ToString();
             }
             set
             {
@@ -52,7 +54,8 @@ namespace schedule.com.Models.sessions
             }
             else
             {
-                throw new NullReferenceException(string.Format("Session with key name \"{0}\" not set value.", key));
+                return null;
+                //throw new NullReferenceException(string.Format("Session with key name \"{0}\" not set value.", key));
             }
         }
         private string GetSessionValue(object key)
@@ -63,7 +66,8 @@ namespace schedule.com.Models.sessions
             }
             else
             {
-                throw new NullReferenceException(string.Format("Session with key name \"{0}\" not set value.", key));
+                return null;
+                //throw new NullReferenceException(string.Format("Session with key name \"{0}\" not set value.", key));
             }
         }
         private T GetSessionValue<T>(string key)

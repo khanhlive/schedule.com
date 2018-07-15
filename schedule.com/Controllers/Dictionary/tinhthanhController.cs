@@ -12,6 +12,10 @@ namespace schedule.com.Controllers
 {
     public class tinhthanhController : BaseController
     {
+        public tinhthanhController() : base()
+        {
+            this.SetModuleCode("DANHMUCTINH");
+        }
         // GET: tinhthanh
         public ActionResult Index(string text, string cap, bool status=true, int page = 1, int pagesize = 20)
         {

@@ -13,24 +13,50 @@ namespace schedule.data.businessObject
     {
         public IEnumerable<SYS_SUBSYSTEM_EXTEND> GetMainMenu(string moduleid)
         {
-            using (SYS_SUBSYSTEM sys_subsystem=new SYS_SUBSYSTEM())
+            using (SYS_SUBSYSTEM sys_subsystem = new SYS_SUBSYSTEM())
             {
                 var data = sys_subsystem.GetSubSystemBySystemId(moduleid);
-                List<SYS_SUBSYSTEM_EXTEND> _EXTENDs = new List<SYS_SUBSYSTEM_EXTEND>();
-                foreach (SYS_SUBSYSTEM sub in data)
+                if (data!=null)
                 {
-                    if (string.IsNullOrEmpty(sub.ParentID)||string.IsNullOrWhiteSpace(sub.ParentID))
+                    List<SYS_SUBSYSTEM_EXTEND> _EXTENDs = new List<SYS_SUBSYSTEM_EXTEND>();
+                    foreach (SYS_SUBSYSTEM sub in data)
                     {
-                        SysSubSystemToSysSubSystemExtendAdapter sysSubSystemToSys = new SysSubSystemToSysSubSystemExtendAdapter(sub); 
-                        _EXTENDs.Add(sysSubSystemToSys.GetSYS_SUBSYSTEM_EXTEND());
+                        if (string.IsNullOrEmpty(sub.ParentID) || string.IsNullOrWhiteSpace(sub.ParentID))
+                        {
+                            SysSubSystemToSysSubSystemExtendAdapter sysSubSystemToSys = new SysSubSystemToSysSubSystemExtendAdapter(sub);
+                            _EXTENDs.Add(sysSubSystemToSys.GetSYS_SUBSYSTEM_EXTEND());
+                        }
                     }
+                    foreach (SYS_SUBSYSTEM_EXTEND subex in _EXTENDs)
+                    {
+                        subex.Sys_SubSystems.AddRange(this.GetSYS_SUBSYSTEMs(subex.SubSystemID.ToString(), data));
+                    }
+                    return _EXTENDs;
                 }
-                foreach (SYS_SUBSYSTEM_EXTEND subex in _EXTENDs)
+                else
                 {
-                    subex.Sys_SubSystems.AddRange(data.Where(p => p.ParentID == subex.SubSystemID.ToString()));
+                    return new List<SYS_SUBSYSTEM_EXTEND>();
                 }
-                return _EXTENDs;
             }
+        }
+        private IEnumerable<SYS_SUBSYSTEM_EXTEND> GetSYS_SUBSYSTEMs(string parentId, IEnumerable<SYS_SUBSYSTEM> source)
+        {
+            List<SYS_SUBSYSTEM_EXTEND> _EXTENDs = new List<SYS_SUBSYSTEM_EXTEND>();
+            SysSubSystemToSysSubSystemExtendAdapter sysSubSystemToSys = new SysSubSystemToSysSubSystemExtendAdapter();
+            foreach (SYS_SUBSYSTEM item in source.Where(p => p.ParentID == parentId))
+            {
+                sysSubSystemToSys.SetSubSystem(item);
+                _EXTENDs.Add(sysSubSystemToSys.GetSYS_SUBSYSTEM_EXTEND());
+            }
+            if (_EXTENDs.Count() > 0)
+            {
+                foreach (SYS_SUBSYSTEM_EXTEND item in _EXTENDs)
+                {
+                    item.Sys_SubSystems.AddRange(this.GetSYS_SUBSYSTEMs(item.SubSystemID.ToString(), source));
+                }
+            }
+            return _EXTENDs;
+
         }
         public IEnumerable<SYS_SUBSYSTEM_EXTEND> GetMainMenu(List<SYS_SUBSYSTEM> data)
         {

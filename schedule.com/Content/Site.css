@@ -85,3 +85,119 @@ form.action {
         height: 30px;
         padding: 4px 12px;
     }
+#side-menu > li:hover > a, #side-menu > li.active > a {
+    color: #fff;
+    background: #1e282c;
+    border-left-color: #3c8dbc;
+}
+.sidebar {
+    background: #222d32;
+}
+#side-menu a {
+    border-left-width: 3px !important;
+    border-left-style: solid;
+    border-left-color: transparent;
+}
+.sidebar .nav-second-level .arrow{
+    top:12px;
+}
+.sidebar .fa-fw{
+    margin-right:3px;
+}
+.sidebar li.user-pro a {
+    padding: 9px 35px 9px 10px !important;
+}
+.navbar.navbar-default li.position-unset{
+    position:unset;
+}
+.gb_sb {
+    border-color: transparent;
+    border-style: dashed dashed solid;
+    border-width: 0 8.5px 8.5px;
+    display: none;
+    position: absolute;
+    left: 14px;
+    z-index: 1;
+    height: 0;
+    width: 0;
+    -webkit-animation: gb__a .2s;
+    animation: gb__a .2s;
+    border-bottom-color: #ccc;
+    border-bottom-color: #fff;
+    top: 37px;
+}
+
+.gb_b {
+    background-position: -35px -1352px;
+    opacity: .55;
+    display: inline-block;
+    outline: none;
+    vertical-align: middle;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.gb_dc {
+    background-image: url(https://ssl.gstatic.com/gb/images/v1_d4f1f9e0.png);
+    -webkit-background-size: 92px 2973px;
+    background-size: 92px 2973px;
+}
+
+.gb_aa {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: rgba(0,0,0,.2);
+    color: #000;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    display: none;
+    outline: none;
+    overflow: hidden;
+    position: absolute;
+    right: 30px;
+    top: 45px;
+    -webkit-animation: gb__a .2s;
+    animation: gb__a .2s;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-user-select: text;
+}
+
+.gb_ca {
+    -webkit-transition: height .2s ease-in-out;
+    transition: height .2s ease-in-out;
+}
+
+.gb_aa.gb_ba {
+    min-height: 196px;
+    overflow-y: auto;
+    width: 320px;
+}
+
+.gb_7c.gb_g .gb_rb, .gb_7c.gb_g .gb_sb, .gb_7c.gb_g .gb_aa, .gb_g.gb_aa {
+    display: none;
+}
+
+.position-unset.active > .menu-google {
+    display: block;
+}
+
+.position-unset.active > div > .gb_sb {
+    display: block;
+}
+
+.position-unset > div.waves-effect:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1259px) {
+    #form-change-module .cd-dropdown{
+        display:none;
+    }
+}

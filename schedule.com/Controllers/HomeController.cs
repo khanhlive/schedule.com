@@ -9,11 +9,21 @@ namespace schedule.com.Controllers
 {
     public class HomeController : BaseController
     {
+        public HomeController() : base()
+        {
+            this.SetModuleCode("");
+        }
+
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-
             return View();
+        }
+        [HttpPost]
+        public ActionResult ChangeModule(int moduleid)
+        {
+            this.SetModuleID(moduleid);
+            return RedirectToAction("Index");
         }
     }
 }

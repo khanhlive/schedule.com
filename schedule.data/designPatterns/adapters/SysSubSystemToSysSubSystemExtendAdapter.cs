@@ -15,6 +15,13 @@ namespace schedule.data.designPatterns.adapters
         {
             this._subsystem = _subsystem;
         }
+        public SysSubSystemToSysSubSystemExtendAdapter()
+        {
+        }
+        public void SetSubSystem(erps.systems.SYS_SUBSYSTEM _subsystem)
+        {
+            this._subsystem = _subsystem;
+        }
         public SYS_SUBSYSTEM_EXTEND GetSYS_SUBSYSTEM_EXTEND()
         {
             SYS_SUBSYSTEM_EXTEND _EXTEND = new SYS_SUBSYSTEM_EXTEND();

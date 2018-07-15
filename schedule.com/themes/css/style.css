@@ -28,12 +28,12 @@ Author : WrapPixel (http://www.wrappixel.com)
   outline: none !important;
 }
 body {
-  background: #2f323e;
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-  color: #313131;
-  font-weight: 300;
+    background: #2f323e;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    color: #313131;
+    font-weight: 300;
 }
 html {
   position: relative;
@@ -6074,7 +6074,7 @@ ul.select-row-icon li a.selected i.whn-hov {
   border-top: 1px solid rgba(120, 130, 140, 0.13);
 }
 #side-menu > li > a {
-  padding: 9px 35px 9px 20px;
+  padding: 13px 35px 13px 10px;
   display: block;
 }
 #side-menu > li > a:hover,
@@ -6111,10 +6111,10 @@ ul.select-row-icon li a.selected i.whn-hov {
   border-bottom: none !important;
 }
 .sidebar .nav-second-level li a {
-  padding: 9px 10px 9px 40px;
+  padding: 9px 10px 9px 20px;
 }
 .sidebar .nav-third-level li a {
-  padding-left: 60px;
+  padding-left: 30px;
 }
 .content-wrapper .nicescroll-rails {
   display: none!important;

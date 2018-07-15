@@ -59,6 +59,10 @@ namespace schedule.data.helpers
             }
             else throw new ArgumentNullException("Chuỗi không phải là một số");
         }
+        public static string ToString(object value)
+        {
+            return value == null ? null : value.ToString();
+        }
         public static int StringToInt(object value)
         {
             int obj = 0;

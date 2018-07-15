@@ -67,6 +67,11 @@
         <![endif]-->
     @*@Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
+
+    <script type="text/javascript">
+        var appModuleRuntime = '@ViewBag.moduleCode';
+    </script>
+
 </head>
 <body class="fix-header">
     <!-- ============================================================== -->
@@ -216,7 +221,7 @@
     <!-- jQuery file upload -->
     <script src="~/plugins/bower_components/dropify/dist/js/dropify.min.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="~/themes/js/custom.min.js"></script>
+    <script src="~/themes/js/custom.js"></script>
     <script src="~/themes/js/validator.js"></script>
     <script src="~/Scripts/custom/jquery.dropdown.js"></script>
     @*<script src="~/themes/js/dashboard1.js"></script>*@
@@ -248,6 +253,11 @@
             $('#cd-dropdown').dropdown({
                 stack: false,
                 //slidingIn : 100
+                onOptionSelect: function (d) {
+                    console.log(d);
+                    $('#form-change-module input[name="moduleid"]').val($(d.context).attr('data-value'));
+                    $('#form-change-module').submit();
+                }
             });
             $('[data-mask]').inputmask();
             $('[data-mask-regex]').inputmask('Regex');

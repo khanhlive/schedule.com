@@ -56,12 +56,18 @@ $(document).ready(function () {
             }
         });
         var url = window.location;
-        var element = $('ul.nav a').filter(function () {
-            return this.href == url || url.href.indexOf(this.href) == 0;
-        }).addClass('active').parent().parent().addClass('in').parent();
+        //var element = $('ul.nav a').filter(function () {
+        //    return (this.href == url || url.href.indexOf(this.href) == 0) && $(this).attr('href');
+        //}).addClass('active').parent().parent().addClass('in').parent();
+        var element = $('#side-menu').find('a[data-nav="' + appModuleRuntime + '"]').addClass('active').parent().parent().addClass('in').parent();
+
         if (element.is('li')) {
             element.addClass('active');
         }
+        element.closest('ul.nav').addClass('in').closest('li').addClass('active');
+        //element.closest('li').addClass('active');
+        //element.parent('li').addClass('active');
+        
     });
     // This is for resize window
     $(function () {
