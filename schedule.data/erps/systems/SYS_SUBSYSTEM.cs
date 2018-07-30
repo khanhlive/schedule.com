@@ -74,7 +74,7 @@ namespace schedule.data.erps.systems
 
         public IEnumerable<SYS_SUBSYSTEM> GetSubSystemBySystemId(string systemId)
         {
-            string query = string.Format(@"SELECT ss.SubSystemID,ss.SubSystemCode,ss.SubSystemName,ss.[Description],ss.ParentID,ss.SortOrder,ss.SystemType,ss.EditVersion,ss.GroupSystem_ID,ss.Icon,ss.[Url],ss.Area,ss.Controller,ss.ActionName FROM SYS_SUBSYSTEM AS ss WHERE ss.GroupSystem_ID = @SystemId OR ss.GroupSystem_ID=0 ORDER BY ss.GroupSystem_ID,ss.ParentID,ss.SortOrder");
+            string query = string.Format(@"SELECT ss.SubSystemID,ss.SubSystemCode,ss.SubSystemName,ss.[Image], ss.[Description],ss.ParentID,ss.SortOrder,ss.SystemType,ss.EditVersion,ss.GroupSystem_ID,ss.Icon,ss.[Url],ss.Area,ss.Controller,ss.ActionName FROM SYS_SUBSYSTEM AS ss WHERE ss.GroupSystem_ID = @SystemId OR ss.GroupSystem_ID=0 ORDER BY ss.GroupSystem_ID,ss.ParentID,ss.SortOrder");
             if (!string.IsNullOrEmpty(query) && !string.IsNullOrWhiteSpace(query))
             {
                 this.CreateConnection();

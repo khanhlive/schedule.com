@@ -20,7 +20,6 @@ namespace schedule.com.Controllers
         public ActionResult Index(string text, string cap, bool status=true, int page = 1, int pagesize = 20)
         {
             this.SetPageInfo(page, pagesize);
-
             ViewBag.text = text;
             ViewBag.cap = cap;
             ViewBag.status = status;

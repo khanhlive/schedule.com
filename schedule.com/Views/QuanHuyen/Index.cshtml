@@ -1,0 +1,133 @@
+﻿@using schedule.data.erps.dictionary
+@using PagedList.Mvc
+@using PagedList
+@model IPagedList<DIC_HUYEN>
+@{
+    ViewBag.Title = "Danh mục quận huyện";
+    ViewBag.PageName = "DANH MỤC QUẬN HUYỆN";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+    schedule.data.helpers.Utility utility = new schedule.data.helpers.Utility();
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="box-title m-b-0">QUẬN HUYỆN</h3>
+                    <p class="text-muted m-b-20">Danh mục quận huyện</p>
+                </div>
+                <div class="col-md-8 text-right">
+                    <div class="btn-group">
+                        <a href="@Url.Action("create","quanhuyen")" class="btn btn-primary waves-effect"><i class="fa fa-plus m-r-5"></i><span>Tạo mới</span></a>
+                        <button type="button" class="btn btn-default waves-effect"><i class="fa fa-refresh m-r-5"></i><span>Làm mới</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="toolbar m-b-20">
+                        <form class="form-inline" action="@Url.Action("Index","quanhuyen")" method="get">
+                            <div class="form-group">
+                                <label class="control-label">Mã| tên quận huyện:</label>
+                                <input class="form-control" name="text" value="@ViewBag.text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Cấp:</label>
+                                <select class="form-control" name="cap">
+                                    <option value="0">-Chọn cấp-</option>
+                                    @foreach (SelectListItem item in new schedule.data.erps.dictionary.DIC_HUYEN().GetCaps(ViewBag.cap == null ? 0 : Convert.ToInt32(ViewBag.cap)))
+                                    {
+                                        <option value="@item.Value" @if (item.Selected) { <text> selected="selected" </text> }>
+                                            @item.Text
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Tỉnh/thành:</label>
+                                <select class="form-control" name="matinh">
+                                    <option value="0">-Chọn cấp-</option>
+                                    @foreach (DIC_TINH item in new schedule.data.erps.dictionary.DIC_TINH().GetAllActive())
+                                    {
+                                        <option value="@item.MaTinh" @if (item.MaTinh == ViewBag.matinh) { <text> selected="selected" </text> }>
+                                            @item.TenTinh
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="checkbox checkbox-info">
+                                @*@Html.ThemeActionLink("demo","Index","tinhthanh",new { id=utility.Encode("id=demo&name=khanh nguyên")},new { @class="demo"})*@
+                                @Html.ThemeCheckBox("status", ViewBag.status != null ? (bool)ViewBag.status : true, new { @id = "ckbstatus" })
+                                <label for="ckbstatus"> Sử dụng</label>
+                            </div>
+                            <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>&nbsp;<span>Tìm kiếm</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="scrollable">
+                        <div class="table-responsive">
+                            <table id="" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th width="60">#</th>
+                                        <th>Mã</th>
+                                        <th>Tên quận/huyện</th>
+                                        <th>Cấp</th>
+                                        <th>Tên tỉnh/thành</th>
+                                        <th width="150">Trạng thái</th>
+                                        <th width="100">Chức năng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (DIC_HUYEN quanhuyen in Model)
+                                    {
+                                        <tr>
+                                            <td>@i</td>
+                                            <td>@quanhuyen.MaHuyen</td>
+                                            <td>@quanhuyen.TenHuyen</td>
+                                            <td>@quanhuyen.Cap</td>
+                                            <td>@quanhuyen.TenTinh</td>
+                                            <td>
+                                                @if (quanhuyen.Status == 1)
+                                                {
+                                                    <span class="label label-success">Đang sử dụng</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="label label-default">
+                                                        Không sử dụng
+                                                    </span>
+                                                }
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="@Url.Action("edit","tinhthanh",new { id=quanhuyen.MaTinh })" data-toggle="tooltip" data-original-title="Chỉnh sửa"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                                <form id="tinhthanh_delete_@quanhuyen.MaTinh" class="action" onsubmit="return confirm('Bạn có muốn xóa bản ghi này không?')" method="post" action="@Url.Action("delete","quanhuyen")">
+                                                    <input type="hidden" value="@quanhuyen.MaTinh" name="id" />
+                                                    <a href="javascript:$('form#tinhthanh_delete_@quanhuyen.MaTinh').submit();" data-toggle="tooltip" data-original-title="Xóa tỉnh thành"> <i class="fa fa-close text-danger"></i></a>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        i++;
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-7 text-right">
+                                @Html.PagedListPager(Model, page => Url.Action("Index", "quanhuyen", new { page, text = ViewBag.text, cap = ViewBag.cap, matinh = ViewBag.matinh, status = ViewBag.status, pagesize = ViewBag.pagesize }), schedule.data.helpers.HtmlHelper.GetPagedListRenderOptions)
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

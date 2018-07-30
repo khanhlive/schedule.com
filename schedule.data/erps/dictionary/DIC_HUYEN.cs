@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Mvc;
 using schedule.data.enums;
 using schedule.data.helpers;
 
@@ -27,6 +28,8 @@ namespace schedule.data.erps.dictionary
         {
             try
             {
+                this.CreateConnection();
+
                 this.sqlHelper.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dt = this.sqlHelper.ExecuteReader("GetHuyenByTinh", new string[] { "@MaTinh" }, new object[] { matinh });
                 return this.DataReaderToList(dt);
@@ -99,7 +102,22 @@ namespace schedule.data.erps.dictionary
         {
             return this.Update(this);
         }
-
+        public IEnumerable<DIC_HUYEN> GetFilter(string key, string cap, string status,string matinh)
+        {
+            try
+            {
+                this.CreateConnection();
+                this.sqlHelper.CommandType = CommandType.StoredProcedure;
+                string query = string.Format("QuanHuyen_Filter");
+                SqlDataReader dataReader = this.sqlHelper.ExecuteReader(query, new string[] { "@key", "@cap", "@status","@matinh" }, new object[] { key, cap, status, matinh });
+                return this.DataReaderToList(dataReader);
+            }
+            catch (Exception ex)
+            {
+                log.Error("GetFilter DANH MUC HUYEN/THI XA", ex);
+                return null;
+            }
+        }
         public override SqlResultType Update(DIC_HUYEN huyen)
         {
             try
@@ -107,7 +125,7 @@ namespace schedule.data.erps.dictionary
                 this.CreateConnection();
                 this.sqlHelper.CommandType = CommandType.StoredProcedure;
                 object result = this.sqlHelper.ExecuteScalar("UpdateHuyen",
-                    new string[] { "@MaHuyen", "@MaTinh", "@TenHuyen", "@Status","@Cap" },
+                    new string[] { "@MaHuyen", "@MaTinh", "@TenHuyen", "@Status", "@Cap" },
                     new object[] { huyen.MaHuyen, huyen.MaTinh, huyen.TenHuyen, huyen.Status, huyen.Cap }
                     );
                 int kq = Convert.ToInt32(result);
@@ -143,6 +161,19 @@ namespace schedule.data.erps.dictionary
                 log.Error("Generate DANH MUC HUYEN/THI XA", ex);
                 return null;
             }
+        }
+        public IEnumerable<SelectListItem> GetCaps(int id = 1)
+        {
+            List<SelectListItem> selectListItems = new List<SelectListItem>();
+            selectListItems.Add(new SelectListItem { Value = "1", Text = "Huyện", Selected = id == 1 });
+            selectListItems.Add(new SelectListItem { Value = "2", Text = "Quận", Selected = id == 2 });
+            selectListItems.Add(new SelectListItem { Value = "3", Text = "Thành phố", Selected = id == 3 });
+            selectListItems.Add(new SelectListItem { Value = "4", Text = "Thị xã", Selected = id == 4 });
+            return selectListItems;
+        }
+        public string GetCapById(string id)
+        {
+            return id == "1" ? "Huyện" : id == "2" ? "Quận" : id == "3" ? "Thành phố" : id == "4" ? "Thị xã" : "";
         }
     }
 }

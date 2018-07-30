@@ -130,6 +130,7 @@
     <Compile Include="erps\vss\VSS_PERSON.cs" />
     <Compile Include="erps\vss\VSS_THONGTINBOSUNG.cs" />
     <Compile Include="extensions\AttributeCustom.cs" />
+    <Compile Include="extensions\HtmlQueryStringBuilder.cs" />
     <Compile Include="extensions\Html\EditorExtension.cs" />
     <Compile Include="extensions\Html\HtmlHelperCustom.cs" />
     <Compile Include="extensions\objs\ChuyenKhoaClass.cs" />
@@ -142,11 +143,14 @@
     <Compile Include="extensions\objs\TieuNhomRG_ChuyenKhoa.cs" />
     <Compile Include="extensions\DataConverter.cs" />
     <Compile Include="extensions\FormatHelper.cs" />
+    <Compile Include="extensions\SeoFriendlyRoute.cs" />
     <Compile Include="helpers\HtmlHelper.cs" />
+    <Compile Include="helpers\Library\PropertyHelper.cs" />
     <Compile Include="helpers\MyConfig.cs" />
     <Compile Include="helpers\SqlAccess.cs" />
     <Compile Include="helpers\SqlHelper.cs" />
     <Compile Include="helpers\SqlHelperException.cs" />
+    <Compile Include="helpers\Utility.cs" />
     <Compile Include="models\EntityBase.cs" />
     <Compile Include="models\GiaoVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

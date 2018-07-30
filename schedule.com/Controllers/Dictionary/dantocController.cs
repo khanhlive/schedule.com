@@ -7,6 +7,10 @@ namespace schedule.com.Controllers
 {
     public class dantocController : BaseController
     {
+        public dantocController() : base()
+        {
+            this.SetModuleCode("DANHMUCDANTOC");
+        }
         // GET: dantoc
         public ActionResult Index(int page=1,int pagesize=20)
         {

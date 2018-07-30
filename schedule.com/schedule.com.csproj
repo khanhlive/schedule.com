@@ -168,6 +168,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Base\ControllerBase.cs" />
     <Compile Include="Controllers\Dictionary\dantocController.cs" />
+    <Compile Include="Controllers\Dictionary\QuanHuyenController.cs" />
     <Compile Include="Controllers\Dictionary\tinhthanhController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\sharedController.cs" />
@@ -185,7 +186,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom\style4.css" />
+    <Content Include="Content\images\duoc.png" />
     <Content Include="Content\images\HeadBar.jpg" />
+    <Content Include="Content\images\icon-reports.png" />
+    <Content Include="Content\images\khambenh.png" />
+    <Content Include="Content\images\nhan-su.png" />
+    <Content Include="Content\images\search-flat.png" />
+    <Content Include="Content\images\system.png" />
+    <Content Include="Content\images\taisan.png" />
+    <Content Include="Content\images\vienphi.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1977,6 +1986,8 @@
     <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone-ru.min.js" />
     <Content Include="Plugins\input-mask\min\inputmask\phone-codes\phone.min.js" />
     <Content Include="Plugins\input-mask\min\jquery.inputmask.bundle.min.js" />
+    <Content Include="Scripts\aes\aes-ctr.js" />
+    <Content Include="Scripts\aes\aes.js" />
     <Content Include="Scripts\apps\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3056,6 +3067,7 @@
     <Content Include="Views\tinhthanh\demo.cshtml" />
     <Content Include="Views\Shared\_LayoutTemplate.cshtml" />
     <Content Include="Views\Shared\_LeftSidebarTemplate.cshtml" />
+    <Content Include="Views\QuanHuyen\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

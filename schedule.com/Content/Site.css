@@ -7,7 +7,10 @@
     top: 0px;
     left: 0px;
 }
-
+.footer{
+    padding-top:15px;
+    padding-bottom:15px;
+}
 body {
     font-size: 13px;
 }
@@ -196,6 +199,43 @@ form.action {
 .position-unset > div.waves-effect:hover {
     background: rgba(0, 0, 0, 0.1);
 }
+.sidebar .active > a > text> .fa.arrow:before {
+    content: "\f107";
+}
+ul.demo1 {
+    padding: 27px;
+    list-style: none;
+}
+
+    ul.demo1 li {
+        padding: 1px;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 10px;
+        color: black;
+        z-index: 999;
+        height: 100px;
+        width: 82px;
+    }
+
+        ul.demo1 li:hover > a {
+            border: 1px solid #cecece;
+        }
+
+        ul.demo1 li a {
+            display: inline-block;
+            font-size: 13px;
+            margin: 8px 2px;
+            text-align: center;
+            outline: none;
+            width: 100%;
+            border: 1px solid transparent;
+        }
+
+            ul.demo1 li a img {
+                width: 64px;
+                height: 64px;
+            }
 @media screen and (max-width: 1259px) {
     #form-change-module .cd-dropdown{
         display:none;

@@ -148,6 +148,14 @@ namespace schedule.com.Controllers.Base
         {
             TempData["messagebox"] = new MessageObject { type = type, title = title, message = message };
         }
+
+        protected bool CheckString(string strings) {
+            if (string.IsNullOrEmpty(strings) || string.IsNullOrEmpty(strings))
+            {
+                return true;
+            }
+            else return false;
+        }
         
     }
 }

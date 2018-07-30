@@ -18,33 +18,6 @@
         moduleId = schedule.data.helpers.DataConverter.StringToInt(sessionProvider.ModuleId);
     }
 }
-<style>
-    ul.demo1 {
-        padding: 27px;
-        list-style: none;
-    }
-        ul.demo1 li {
-            padding: 1px;
-            display: inline-block;
-            vertical-align: top;
-            color: black;
-            z-index: 999;
-            height: 98px;
-            width: 82px;
-        }
-            ul.demo1 li a {
-                display: inline-block;
-                font-size: 13px;
-                margin: 8px 2px;
-                text-align: center;
-                outline: none;
-                width:100%;
-            }
-            ul.demo1 li a img {
-                width:64px;
-                height:64px;
-            }
-</style>
 <nav class="navbar navbar-default navbar-static-top m-b-0">
     <div class="navbar-header">
         <div class="top-left-part">
@@ -69,7 +42,7 @@
                 @using (Html.BeginForm("ChangeModule", "Home", FormMethod.Post, new { @id = "form-change-module" }))
                 {
                     <select id="cd-dropdown" name="moduleid" class="cd-select" onchange="ChangeModule();">
-                        @*<option value="-1" @if (moduleId==-1) { <text> selected </text> }>Chọn nhóm chức năng</option>*@
+                        <option value="-1" @if (moduleId==-1) { <text> selected </text> }>Chọn nhóm chức năng</option>
                         @foreach (var item in _groupsystems)
                         {
                             <option value="@item.SystemID" @if (moduleId == item.SystemID) { <text> selected="selected" </text> } class="@item.Image">@item.SystemName</option>
@@ -197,44 +170,50 @@
                     <ul class="demo1" style="">
                         <li>
                             <a href="#">
-                                <img class="img-thumbnail" />
-                                <span>Demo1</span>
+                                <img class="" src="~/Content/images/nhan-su.png" />
+                                <span>Hành chính</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-thumbnail" />
-                                <span>Demo1</span>
+                                <img class="" src="~/Content/images/khambenh.png" />
+                                <span>Khám bệnh điều trị</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-thumbnail" />
-                                <span>Demo1</span>
+                                <img class="" src="~/Content/images/duoc.png" />
+                                <span>Dược</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-thumbnail" />
-                                <span>Demo1</span>
+                                <img class="" src="~/Content/images/vienphi.png" />
+                                <span>Viện phí</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-thumbnail" />
-                                <span>Demo1</span>
+                                <img class="" src="~/Content/images/taisan.png" />
+                                <span>Tài sản</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-thumbnail" />
-                                <span>Demo1</span>
+                                <img class="" src="~/Content/images/icon-reports.png" />
+                                <span>Báo cáo tổng hợp</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="img-thumbnail" />
-                                <span>Demo1</span>
+                                <img class="" src="~/Content/images/search-flat.png" />
+                                <span>Tra cứu</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img class="" src="~/Content/images/system.png" />
+                                <span>Hệ thống</span>
                             </a>
                         </li>
                     </ul>
