@@ -167,6 +167,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Base\ControllerBase.cs" />
+    <Compile Include="Controllers\BHXH\BHXHController.cs" />
     <Compile Include="Controllers\Dictionary\dantocController.cs" />
     <Compile Include="Controllers\Dictionary\QuanHuyenController.cs" />
     <Compile Include="Controllers\Dictionary\tinhthanhController.cs" />
@@ -3068,6 +3069,7 @@
     <Content Include="Views\Shared\_LayoutTemplate.cshtml" />
     <Content Include="Views\Shared\_LeftSidebarTemplate.cshtml" />
     <Content Include="Views\QuanHuyen\Index.cshtml" />
+    <Content Include="Views\BHXH\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

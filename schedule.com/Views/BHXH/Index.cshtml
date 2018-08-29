@@ -1,0 +1,183 @@
+﻿@using schedule.data.erps.his
+@using PagedList.Mvc
+@using PagedList
+@model IPagedList<HIS_BENHNHAN>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Gui BHXH";
+    ViewBag.PageName = "Gui BHXH";
+    int i = 1;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="box-title m-b-0">Gui BHXH</h3>
+                    <p class="text-muted m-b-20">Gui BHXH</p>
+                </div>
+                <div class="col-md-8 text-right">
+                    <div class="btn-group">
+                        <a href="@Url.Action("create","tinhthanh")" class="btn btn-primary waves-effect"><i class="fa fa-plus m-r-5"></i><span>Tạo mới</span></a>
+                        <button type="button" class="btn btn-default waves-effect"><i class="fa fa-refresh m-r-5"></i><span>Làm mới</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="toolbar m-b-20">
+                        <form class="form-inline" action="@Url.Action("Index","bhxh")" method="get">
+                            <div class="form-group">
+                                <label class="control-label">Mã| tên tỉnh:</label>
+                                <input class="form-control" name="text" value="@ViewBag.text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Cấp:</label>
+                                <select class="form-control" name="cap">
+                                    <option value="0">-Chọn cấp-</option>
+
+                                </select>
+                            </div>
+                            <div class="checkbox checkbox-info">
+
+                                <label for="ckbstatus"> Sử dụng</label>
+                            </div>
+                            <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>&nbsp;<span>Tìm kiếm</span></button>
+                            <button type="button" class="btn btn-info pull-right" onclick="GetData();"><i class="fa fa-upload"></i>&nbsp; Gửi</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="scrollable">
+                        <div class="table-responsive">
+                            <table id="danhsachbenhnhan" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th width="60">#</th>
+                                        <th>Mã</th>
+                                        <th>Họ tên</th>
+                                        <th>Giới tính</th>
+                                        <th>Ngày sinh</th>
+                                        <th>Số thẻ</th>
+                                        <th>Tuổi</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (HIS_BENHNHAN benhnhan in Model)
+                                    {
+                                        <tr>
+                                            <td class="text-center">
+                                                <input type="checkbox" name="ckb_@benhnhan.ID" class="ckb-select" id="ckb_@benhnhan.ID" data-id="@benhnhan.ID" />
+                                            </td>
+                                            <td>@i</td>
+                                            <td>@benhnhan.MaBenhNhan</td>
+                                            <td>@benhnhan.TenBenhNhan</td>
+                                            <td>@benhnhan.GioiTinh_Ma</td>
+                                            <td>@benhnhan.NgayThangNamSinh</td>
+                                            <td>@benhnhan.SoTheBHYT</td>
+                                            <td>@benhnhan.Tuoi</td>
+                                            <td>@benhnhan.DiaChi</td>
+                                            <td></td>
+                                        </tr>
+                                        i++;
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-7 text-right">
+                                @Html.PagedListPager(Model, page => Url.Action("Index", "bhxh", new { page, pagesize = (int)ViewBag.pagesize }), schedule.data.helpers.HtmlHelper.GetPagedListRenderOptions)
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alertbottomright" class="myadmin-alert myadmin-alert-img alert-info myadmin-alert-bottom-right" style="display: block;width:300px;">
+        <img src="../plugins/images/users/genu.jpg" class="img" alt="img"><a href="#" class="closed">×</a>
+        <h4>Đang xử lý</h4>
+        <div class="progress progress-md">
+            <div id="bxhh-progress" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width: 0%;">0%</div>
+        </div>
+    </div>
+    <div id="targetDiv"></div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        function GetData() {
+            //var table = $('#danhsachbenhnhan');
+            //var data = [];
+            //$.each(table.find('tbody tr input.ckb-select:checked'), function (a, b) {
+            //    data.push($(b).data('id'));
+            //});
+            //console.log(data);
+            demo();
+        }
+        function demo() {
+            var table = $('#danhsachbenhnhan');
+            var data = [];
+            $.each(table.find('tbody tr input.ckb-select:checked'), function (a, b) {
+                data.push($(b).data('id'));
+            });
+            var da = [];
+            for (var i = 0; i < 100; i++) {
+                da.push(Math.floor(Math.random() * 20000))
+            }
+            $.ajax({
+                url: '/bhxh/xulydulieu',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (d) {
+                    console.log(d);
+                    initialize(d.processId);
+                },
+                error: function (err) {
+                    console.log(err);
+                    document.write(err.responseText)
+                }
+            })
+        }
+        function initialize(key) {
+            if (window.EventSource == undefined) {
+                // If not supported
+                //document.getElementById('targetDiv').innerHTML = "Your browser doesn't support Server Sent Events.";
+                return;
+            } else {
+                var source = new EventSource('../bhxh/Message?key=' + key, );
+
+                source.onopen = function (event) {
+                    //document.getElementById('targetDiv').innerHTML += 'Connection Opened.<br>';
+                };
+
+                source.onerror = function (event) {
+                    if (event.eventPhase == EventSource.CLOSED) {
+                        //document.getElementById('targetDiv').innerHTML += 'Connection Closed.<br>';
+                        source.close();
+                    }
+                };
+
+                source.onmessage = function (event) {
+                    console.log(event);
+                    $('#bxhh-progress').css({ 'width': event.data+'%' });
+                    $('#bxhh-progress').text(event.data+'%')
+                    //document.getElementById('targetDiv').innerHTML += event.data + '<br>';
+                };
+            }
+        }
+    </script>
+}
+

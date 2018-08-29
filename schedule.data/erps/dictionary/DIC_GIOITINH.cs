@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using schedule.data.enums;
 using schedule.data.helpers;
 
-namespace schedule.data.erps.vss
+namespace schedule.data.erps.his
 {
     public class DIC_GIOITINH : EntityBase<DIC_GIOITINH>
     {

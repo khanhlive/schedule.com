@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using schedule.data.enums;
 using schedule.data.helpers;
 
-namespace schedule.data.erps.vss
+namespace schedule.data.erps.his
 {
-    public class VSS_PERSON : EntityBase<VSS_PERSON>
+    public class HIS_PERSON : EntityBase<HIS_PERSON>
     {
         #region Properties
 
@@ -41,7 +41,7 @@ namespace schedule.data.erps.vss
 
         #region Method
 
-        public override IEnumerable<VSS_PERSON> GetAll()
+        public override IEnumerable<HIS_PERSON> GetAll()
         {
             try
             {
@@ -81,7 +81,7 @@ FROM
             }
         }
 
-        public override IEnumerable<VSS_PERSON> GetAllActive()
+        public override IEnumerable<HIS_PERSON> GetAllActive()
         {
             return this.GetAll();
         }
@@ -92,7 +92,7 @@ FROM
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Delete(VSS_PERSON entity)
+        public override SqlResultType Delete(HIS_PERSON entity)
         {
             throw new NotImplementedException();
         }
@@ -102,7 +102,7 @@ FROM
             throw new NotImplementedException();
         }
 
-        public override VSS_PERSON Get(object key)
+        public override HIS_PERSON Get(object key)
         {
             throw new NotImplementedException();
         }
@@ -112,7 +112,7 @@ FROM
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Insert(VSS_PERSON entity)
+        public override SqlResultType Insert(HIS_PERSON entity)
         {
             throw new NotImplementedException();
         }
@@ -122,19 +122,19 @@ FROM
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Update(VSS_PERSON entity)
+        public override SqlResultType Update(HIS_PERSON entity)
         {
             throw new NotImplementedException();
         }
 
-        protected override IEnumerable<VSS_PERSON> DataReaderToList(SqlDataReader dataReader)
+        protected override IEnumerable<HIS_PERSON> DataReaderToList(SqlDataReader dataReader)
         {
             try
             {
-                List<VSS_PERSON> people = new List<VSS_PERSON>();
+                List<HIS_PERSON> people = new List<HIS_PERSON>();
                 while (dataReader.Read())
                 {
-                    VSS_PERSON person  = new VSS_PERSON();
+                    HIS_PERSON person  = new HIS_PERSON();
                     person.ID = DataConverter.StringToInt(dataReader["ID"].ToString());
                     person.DiaChi = dataReader["DiaChi"].ToString();
                     person.DoiTuong_Ma = dataReader["DoiTuong_Ma"].ToString();

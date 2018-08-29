@@ -1,9 +1,9 @@
 
-namespace schedule.data.erps.vss
+namespace schedule.data.erps.his
 {
     using System;
 
-    public partial class VSS_THONGTINBOSUNG
+    public partial class HIS_THONGTINBOSUNG
     {
         public int ID { get; set; }
         public int BenhNhan_ID { get; set; }

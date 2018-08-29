@@ -117,18 +117,18 @@
     <Compile Include="erps\systems\SYS_ROLE_PERMISSION_MAPING.cs" />
     <Compile Include="erps\systems\SYS_SUBSYSTEM.cs" />
     <Compile Include="erps\systems\SYS_USER.cs" />
-    <Compile Include="erps\vss\DIC_GIOITINH.cs" />
-    <Compile Include="erps\vss\VSS_BENHNHAN.cs" />
-    <Compile Include="erps\vss\VSS_CANLAMSANG.cs" />
-    <Compile Include="erps\vss\VSS_CANLAMSANG_CHITIET.cs" />
-    <Compile Include="erps\vss\VSS_CHIDINH.cs" />
-    <Compile Include="erps\vss\VSS_DICHVUCHITIET.cs" />
-    <Compile Include="erps\vss\VSS_DONTHUOC.cs" />
-    <Compile Include="erps\vss\VSS_DONTHUOCHITIET.cs" />
-    <Compile Include="erps\vss\VSS_NHAPDUOCCHITIET.cs" />
-    <Compile Include="erps\vss\VSS_NHAPUOC.cs" />
-    <Compile Include="erps\vss\VSS_PERSON.cs" />
-    <Compile Include="erps\vss\VSS_THONGTINBOSUNG.cs" />
+    <Compile Include="erps\dictionary\DIC_GIOITINH.cs" />
+    <Compile Include="erps\his\HIS_BENHNHAN.cs" />
+    <Compile Include="erps\his\HIS_CANLAMSANG.cs" />
+    <Compile Include="erps\his\HIS_CANLAMSANG_CHITIET.cs" />
+    <Compile Include="erps\his\HIS_CHIDINH.cs" />
+    <Compile Include="erps\his\HIS_DICHVUCHITIET.cs" />
+    <Compile Include="erps\his\HIS_DONTHUOC.cs" />
+    <Compile Include="erps\his\HIS_DONTHUOCHITIET.cs" />
+    <Compile Include="erps\his\HIS_NHAPDUOCCHITIET.cs" />
+    <Compile Include="erps\his\HIS_NHAPUOC.cs" />
+    <Compile Include="erps\his\HIS_PERSON.cs" />
+    <Compile Include="erps\his\HIS_THONGTINBOSUNG.cs" />
     <Compile Include="extensions\AttributeCustom.cs" />
     <Compile Include="extensions\HtmlQueryStringBuilder.cs" />
     <Compile Include="extensions\Html\EditorExtension.cs" />
@@ -158,9 +158,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

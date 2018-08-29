@@ -8,10 +8,10 @@ using schedule.data.enums;
 using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
 
-namespace schedule.data.erps.vss
+namespace schedule.data.erps.his
 {
     [Table("VSS_BENHNHAN")]
-    public class VSS_BENHNHAN : EntityBase<VSS_BENHNHAN>
+    public class HIS_BENHNHAN : EntityBase<HIS_BENHNHAN>
     {
         #region Properties
         [Key]
@@ -64,59 +64,13 @@ namespace schedule.data.erps.vss
 
         #region Method
 
-        public override IEnumerable<VSS_BENHNHAN> GetAll()
+        public override IEnumerable<HIS_BENHNHAN> GetAll()
         {
             try
             {
                 using (IDbConnection dbConnection = new SqlConnection(this.sqlHelper.ConnectionString))
                 {
-                    IEnumerable<VSS_BENHNHAN> benhnhans = dbConnection.Query<VSS_BENHNHAN>(@"SELECT
-	vb.ID,
-	vb.MaBenhNhan,
-	vb.Tuoi,
-	vb.GioiTinh_Ma,
-	vb.NgayThangNamSinh,
-	vb.DiaChi,
-	vb.DoiTuong,
-	vb.NgayNhap,
-	vb.SoTheBHYT,
-	vb.MaCoSo,
-	vb.LaBenhNhanNoiTru,
-	vb.TrieuChung,
-	vb.MaPhongBan,
-	vb.TuyenBenhVien,
-	vb.ChanDoanNoiGioiThieu,
-	vb.CapCuu,
-	vb.NoiTinh,
-	vb.SoThuTu,
-	vb.TrangThaiBenhNhan,
-	vb.HanBaoHiemTu,
-	vb.HanBaoHiemDen,
-	vb.NgaySinh,
-	vb.ThangSinh,
-	vb.NamSinh,
-	vb.BenhVien_Ma,
-	vb.ChuyenKhoa_Ma,
-	vb.TenBenhNhan,
-	vb.LaNgoaiGio,
-	vb.TuyenDuoi,
-	vb.SoKhamBenh,
-	vb.MucHuongBaoHiem,
-	vb.KhuVuc,
-	vb.NgayHanMuc,
-	vb.LuongCoSo,
-	vb.LaUuTien,
-	vb.DieuTriNgoaiTru,
-	vb.DoiTuong_Ma,
-	vb.Person_Ma,
-	vb.NoThe,
-	vb.DoiTuongBenhNhan_Ma,
-	vb.Ma_LienKet,
-	vb.MaKhamChuaBenh,
-	vb.Export,
-	vb.CanBo_Ma
-FROM
-	VSS_BENHNHAN AS vb", commandType: CommandType.Text).ToList();
+                    IEnumerable<HIS_BENHNHAN> benhnhans = dbConnection.Query<HIS_BENHNHAN>(@"SELECT vb.* FROM VSS_BENHNHAN AS vb", commandType: CommandType.Text).ToList();
                     return benhnhans;
                 }
             }
@@ -143,7 +97,7 @@ FROM
             }
         }
 
-        public override IEnumerable<VSS_BENHNHAN> GetAllActive()
+        public override IEnumerable<HIS_BENHNHAN> GetAllActive()
         {
             return this.GetAll();
         }
@@ -153,13 +107,13 @@ FROM
             throw new NotImplementedException();
         }
 
-        public override SqlResultType Delete(VSS_BENHNHAN entity)
+        public override SqlResultType Delete(HIS_BENHNHAN entity)
         {
             try
             {
                 using (IDbConnection dbConnection = new SqlConnection(this.sqlHelper.ConnectionString))
                 {
-                    var returnValue = dbConnection.Delete<VSS_BENHNHAN>(entity);
+                    var returnValue = dbConnection.Delete<HIS_BENHNHAN>(entity);
                     return returnValue ? SqlResultType.OK : SqlResultType.Failed;
                 }
             }
@@ -175,7 +129,7 @@ FROM
             throw new NotImplementedException();
         }
 
-        public override VSS_BENHNHAN Get(object key)
+        public override HIS_BENHNHAN Get(object key)
         {
             throw new NotImplementedException();
         }
@@ -185,13 +139,13 @@ FROM
             return this.Insert(this);
         }
 
-        public override SqlResultType Insert(VSS_BENHNHAN entity)
+        public override SqlResultType Insert(HIS_BENHNHAN entity)
         {
             try
             {
                 using (IDbConnection dbConnection = new SqlConnection(this.sqlHelper.ConnectionString))
                 {
-                    var returnValue = dbConnection.Insert<VSS_BENHNHAN>(entity);
+                    var returnValue = dbConnection.Insert<HIS_BENHNHAN>(entity);
                     return returnValue > 0 ? SqlResultType.OK : SqlResultType.Failed;
                 }
             }
@@ -208,13 +162,13 @@ FROM
             return this.Update(this);
         }
 
-        public override SqlResultType Update(VSS_BENHNHAN entity)
+        public override SqlResultType Update(HIS_BENHNHAN entity)
         {
             try
             {
                 using (IDbConnection dbConnection = new SqlConnection(this.sqlHelper.ConnectionString))
                 {
-                    var returnValue = dbConnection.Update<VSS_BENHNHAN>(entity);
+                    var returnValue = dbConnection.Update<HIS_BENHNHAN>(entity);
                     return returnValue ? SqlResultType.OK : SqlResultType.Failed;
                 }
             }
@@ -225,9 +179,14 @@ FROM
             }
         }
 
-        protected override IEnumerable<VSS_BENHNHAN> DataReaderToList(SqlDataReader dataReader)
+        protected override IEnumerable<HIS_BENHNHAN> DataReaderToList(SqlDataReader dataReader)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<HIS_BENHNHAN> GetFilter()
+        {
+            return GetListByDapper("select top(200) * from VSS_BENHNHAN", CommandType.Text);
         }
 
         #endregion

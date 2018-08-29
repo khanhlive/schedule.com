@@ -1,9 +1,9 @@
 
-namespace schedule.data.erps.vss
+namespace schedule.data.erps.his
 {
     using System;
 
-    public partial class VSS_DICHVUCHITIET
+    public partial class HIS_DICHVUCHITIET
     {
         public int ID { get; set; }
         public string Ma { get; set; }

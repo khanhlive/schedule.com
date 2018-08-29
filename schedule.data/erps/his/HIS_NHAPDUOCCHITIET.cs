@@ -1,9 +1,9 @@
 
-namespace schedule.data.erps.vss
+namespace schedule.data.erps.his
 {
     using System;
 
-    public partial class VSS_NHAPDUOCCHITIET
+    public partial class HIS_NHAPDUOCCHITIET
     {
         public int ID { get; set; }
         public Nullable<int> NhapDuoc_ID { get; set; }
