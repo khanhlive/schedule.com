@@ -127,6 +127,8 @@
             demo();
         }
         function demo() {
+            $('#bxhh-progress').css({ 'width': '0%' });
+            $('#bxhh-progress').text('0%')
             var table = $('#danhsachbenhnhan');
             var data = [];
             $.each(table.find('tbody tr input.ckb-select:checked'), function (a, b) {
@@ -140,7 +142,7 @@
                 url: '/bhxh/xulydulieu',
                 type: 'POST',
                 contentType: 'application/json',
-                data: JSON.stringify(data),
+                data: JSON.stringify(da),
                 success: function (d) {
                     console.log(d);
                     initialize(d.processId);
